@@ -51,8 +51,19 @@ add_library(STB_IMAGE "thirdparty/stb_image.cpp")
 # GLAD
 add_library(GLAD "thirdparty/glad.c")
 
+# IMGUI
+set(IMGUI_FILES 
+	${CMAKE_SOURCE_DIR}/thirdparty/imgui/imgui.cpp
+	${CMAKE_SOURCE_DIR}/thirdparty/imgui/imgui_demo.cpp
+	${CMAKE_SOURCE_DIR}/thirdparty/imgui/imgui_draw.cpp
+	${CMAKE_SOURCE_DIR}/thirdparty/imgui/imgui_impl_glfw.cpp
+	${CMAKE_SOURCE_DIR}/thirdparty/imgui/imgui_impl_opengl3.cpp
+	${CMAKE_SOURCE_DIR}/thirdparty/imgui/imgui_tables.cpp
+	${CMAKE_SOURCE_DIR}/thirdparty/imgui/imgui_widgets.cpp)
+add_library(IMGUI ${IMGUI_FILES})
+
 # Put all libraries into a variable
-set(LIBS glfw3 opengl32 assimp STB_IMAGE GLAD)
+set(LIBS glfw3 opengl32 assimp STB_IMAGE GLAD IMGUI)
 
 # Define the include DIRs
 include_directories(
